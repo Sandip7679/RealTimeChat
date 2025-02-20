@@ -4,7 +4,8 @@ import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
 // const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5001" : "/";
-const BASE_URL = "https://realtimechat-backend-hat4.onrender.com/api";
+// const BASE_URL = "https://realtimechat-backend-hat4.onrender.com/api";
+const BASE_URL = "https://realtimechat-backend-hat4.onrender.com";
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
@@ -94,7 +95,7 @@ export const useAuthStore = create((set, get) => ({
         userId: authUser._id,
       },
       withCredentials:true,
-      // transports:["websocket"]
+      transports:["websocket"]
     });
     socket.connect();
 
